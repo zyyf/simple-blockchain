@@ -8,7 +8,7 @@
 #include <memory>
 #include <stdexcept>
 
-#include "json.hh"
+#include "json.hpp"
 using json = nlohmann::json;
 
 class Block {

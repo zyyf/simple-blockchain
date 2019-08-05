@@ -12,7 +12,7 @@
 #include "BlockChain.hpp"
 #include "requests.hpp"
 
-#include "json.hh"
+#include "json.hpp"
 using json = nlohmann::json;
 
 using namespace std;
@@ -32,14 +32,13 @@ Hash header: index + prevHash + merkleRoot(data) + nonce
  * Main function - sets up server, command line interface
  */
 int main() {
-    printf("Welcome! To quit-> Control c \n");
+    cout<<"Welcome! To quit-> Ctrl+c"<<endl;
     HttpServer server;
 
     // Set up ports
-
     int port;
-    printf("Enter port: ");
-    scanf("%d",&port); 
+    cout<<"Enter port: ";
+    cin>>port;
     server.config.port = port; //server port
     
     vector<int> listOfNodes; //vector of the ports of nodes in the network
@@ -47,8 +46,8 @@ int main() {
     // BLOCK CHAIN INITIALIZATION AND ADDING SELF TO NETWORK
     
     char ch;
-    printf("Are you the initial Node? (y or n) ");
-    scanf(" %c",&ch);
+    cout<<"Are you the initial Node? (y or n)";
+    cin>>ch;
     BlockChain bc;
     if (ch == 'y'){
         // Initial Node: setup Blockchain with genesis block
